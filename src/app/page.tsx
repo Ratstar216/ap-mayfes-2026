@@ -82,7 +82,7 @@ export default function Home() {
         className="grid min-h-screen items-center gap-8 px-6 pb-20 pt-28 sm:px-10 lg:grid-cols-2 lg:px-[10%]"
       >
         <motion.div
-          className="flex justify-center lg:justify-end"
+          className="flex justify-center lg:translate-x-[9vw] lg:justify-end"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
@@ -109,17 +109,19 @@ export default function Home() {
           </div>
         </motion.div>
         <motion.div
-          className="text-center lg:text-left"
+          className="text-center lg:translate-x-[9vw] lg:text-left"
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
         >
-          <p className="font-display text-4xl tracking-[0.16em] text-neutral-700 sm:text-5xl">
-            TECH EXPO 2026
-          </p>
-          <p className="mt-5 text-xl leading-8 sm:text-2xl">
-            Welcome to Tech Expo!
-          </p>
+          <div className="text-3xl font-semibold leading-[1.45] sm:text-5xl">
+            <p>物理工学科</p>
+            <p>計数工学科</p>
+            <div className="mt-2 pl-[1em] text-2xl leading-[1.55] sm:text-3xl">
+              <p>—— 数理情報工学</p>
+              <p>—— システム情報工学</p>
+            </div>
+          </div>
         </motion.div>
       </section>
 
