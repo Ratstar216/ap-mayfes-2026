@@ -117,9 +117,15 @@ export default function Home() {
           <div className="text-3xl font-semibold leading-[1.45] sm:text-5xl">
             <p>物理工学科</p>
             <p>計数工学科</p>
-            <div className="mt-2 pl-[1em] text-2xl leading-[1.55] sm:text-3xl">
-              <p>—— 数理情報工学</p>
-              <p>—— システム情報工学</p>
+            <div className="hero-course-list mt-2 text-2xl leading-[1.55] sm:text-3xl">
+              <p>
+                <span aria-hidden="true" />
+                <span>数理情報工学</span>
+              </p>
+              <p>
+                <span aria-hidden="true" />
+                <span>システム情報工学</span>
+              </p>
             </div>
           </div>
         </motion.div>

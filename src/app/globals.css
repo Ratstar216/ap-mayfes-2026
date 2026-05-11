@@ -63,6 +63,28 @@ button {
     sans-serif;
 }
 
+.hero-course-list {
+  display: inline-grid;
+  grid-template-columns: 1.1em auto;
+  column-gap: 0.28em;
+  padding-left: 1.55em;
+  text-align: left;
+}
+
+.hero-course-list p {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+  align-items: center;
+}
+
+.hero-course-list p > span:first-child {
+  height: 0.12em;
+  width: 1.1em;
+  border-radius: 999px;
+  background: currentColor;
+}
+
 .section-container {
   width: min(1000px, calc(100% - 40px));
   margin: 0 auto;
