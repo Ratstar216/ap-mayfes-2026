@@ -8,9 +8,12 @@ const navItems = [
   { label: "概要", href: "#about" },
   { label: "展示一覧", href: "#exhibitions" },
   { label: "スタンプ", href: "#stamp" },
+  { label: "総選挙", href: "#mayfes-election" },
   { label: "協力研究室", href: "#labs" },
   { label: "アクセス", href: "#access" },
 ];
+
+const electionUrl = "https://visitor.gogatsusai.jp/project/054";
 
 const exhibitions = [
   {
@@ -208,6 +211,36 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section id="mayfes-election" className="section-container">
+          <SectionTitle title="Mayfes Vote" label="五月祭総選挙" />
+          <motion.div
+            className="election-panel"
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+          >
+            <div className="election-copy">
+              <h3 className="text-3xl font-bold leading-tight sm:text-5xl">
+                工学博覧会に投票する
+              </h3>
+              <p className="mt-5 max-w-2xl leading-8">
+                展示をお楽しみいただけたら、五月祭総選挙で「工学博覧会」への投票をお願いします。
+                皆さまの一票が、企画の応援になります。
+              </p>
+            </div>
+            <a
+              href={electionUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="election-button"
+            >
+              投票ページを開く
+              <span aria-hidden="true">→</span>
+            </a>
+          </motion.div>
       </section>
 
       <section id="labs" className="section-container">
