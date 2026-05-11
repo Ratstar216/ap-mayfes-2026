@@ -65,7 +65,7 @@ export default function Home() {
             href="#about"
             className="font-display text-2xl font-semibold tracking-wide sm:text-3xl"
           >
-            TECH EXPO 2026
+            工学博覧会 2026
           </a>
           <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 text-sm font-semibold sm:gap-x-5 sm:text-base">
             {navItems.map((item) => (
