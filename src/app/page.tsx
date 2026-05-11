@@ -98,10 +98,10 @@ export default function Home() {
             />
             <div className="absolute left-1/2 top-[68%] w-full -translate-x-1/2 -translate-y-1/2 px-[8%] text-center">
               <div>
-                <h1 className="whitespace-nowrap text-[clamp(1.9rem,4.5vw,3.8rem)] font-bold leading-none">
+                <h1 className="whitespace-nowrap text-[1.9rem] font-bold leading-none sm:text-[2.55rem] lg:text-[2.9rem]">
                   工学博覧会
                 </h1>
-                <p className="mt-5 whitespace-nowrap font-display text-[clamp(1.1rem,3vw,2.35rem)] tracking-[0.16em] text-neutral-800">
+                <p className="mt-5 whitespace-nowrap font-display text-[1.1rem] tracking-[0.16em] text-neutral-800 sm:text-[1.7rem] lg:text-[1.95rem]">
                   APPLIED PHYSICS
                 </p>
               </div>
