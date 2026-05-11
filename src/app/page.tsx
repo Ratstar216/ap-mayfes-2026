@@ -8,7 +8,7 @@ const navItems = [
   { label: "概要", href: "#about" },
   { label: "展示一覧", href: "#exhibitions" },
   { label: "スタンプ", href: "#stamp" },
-  { label: "研究室", href: "#labs" },
+  { label: "協力研究室", href: "#labs" },
   { label: "アクセス", href: "#access" },
 ];
 
@@ -87,14 +87,26 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: "easeOut" }}
         >
-          <Image
-            src="/expo-assets/logo-black.svg"
-            alt="工学博覧会 2026 ロゴ"
-            width={650}
-            height={650}
-            priority
-            className="h-auto w-full max-w-[650px] rounded-[15px]"
-          />
+          <div className="relative w-full max-w-[650px]">
+            <Image
+              src="/expo-assets/logo-black.svg"
+              alt=""
+              width={650}
+              height={650}
+              priority
+              className="h-auto w-full rounded-[15px]"
+            />
+            <div className="absolute left-1/2 top-[68%] w-full -translate-x-1/2 -translate-y-1/2 px-[8%] text-center">
+              <div>
+                <h1 className="whitespace-nowrap text-[clamp(1.9rem,4.5vw,3.8rem)] font-bold leading-none">
+                  工学博覧会
+                </h1>
+                <p className="mt-5 whitespace-nowrap font-display text-[clamp(1.1rem,3vw,2.35rem)] tracking-[0.16em] text-neutral-800">
+                  APPLIED PHYSICS
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
         <motion.div
           className="text-center lg:text-left"
@@ -103,12 +115,11 @@ export default function Home() {
           transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
         >
           <p className="font-display text-4xl tracking-[0.16em] text-neutral-700 sm:text-5xl">
-            APPLIED PHYSICS
+            TECH EXPO 2026
           </p>
-          <h1 className="mt-3 text-5xl font-bold leading-tight sm:text-7xl lg:text-8xl">
-            工学博覧会
-          </h1>
-          <p className="mt-5 text-xl sm:text-2xl">Welcome to Tech Expo!</p>
+          <p className="mt-5 text-xl leading-8 sm:text-2xl">
+            Welcome to Tech Expo!
+          </p>
         </motion.div>
       </section>
 
@@ -192,7 +203,7 @@ export default function Home() {
       </section>
 
       <section id="labs" className="section-container">
-        <SectionTitle title="Laboratories" label="研究室紹介" />
+        <SectionTitle title="Laboratories" label="協力研究室" />
         <div className="mt-12 grid gap-7">
           {labs.map((lab) => (
             <article key={lab.title} className="lab-card">
