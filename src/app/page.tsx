@@ -220,8 +220,44 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="px-5 py-16 text-center font-display text-xl">
-        &copy; 2026 APPLIED PHYSICS EXHIBITION
+      <footer className="px-5 py-16 text-center">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-base font-semibold">
+          <a
+            href="https://x.com/apmayfes"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 hover:opacity-65"
+          >
+            <span className="grid h-6 w-6 place-items-center rounded-[4px] bg-black p-1">
+              <Image
+                src="/social-media-logos/logo.svg"
+                alt=""
+                width={16}
+                height={16}
+                className="h-4 w-4"
+              />
+            </span>
+            @apmayfes
+          </a>
+          <a
+            href="https://www.instagram.com/apmayfest"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 hover:opacity-65"
+          >
+            <Image
+              src="/social-media-logos/Instagram_Glyph_Gradient.svg"
+              alt=""
+              width={24}
+              height={24}
+              className="h-6 w-6"
+            />
+            @apmayfest
+          </a>
+        </div>
+        <p className="mt-6 font-display text-xl">
+          &copy; 工学博覧会 2026
+        </p>
       </footer>
     </main>
   );

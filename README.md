@@ -26,3 +26,7 @@ npm run typecheck
 npm run lint
 npm run build
 ```
+
+## Trademarks
+
+The X (formerly Twitter) and Instagram logos used in this project are the trademarked properties of X Corp. and Meta Platforms, Inc., respectively. They are used solely for navigational purposes to link to official festival accounts.
