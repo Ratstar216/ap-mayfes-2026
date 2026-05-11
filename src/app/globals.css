@@ -31,9 +31,10 @@ body {
     linear-gradient(180deg, #f7fcff 0%, #ffffff 72%);
   color: var(--foreground);
   font-family:
-    "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+    var(--font-main), "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
     system-ui, sans-serif;
   font-size: 1.3rem;
+  /* font-weight: 400; */
 }
 
 button,
@@ -52,13 +53,13 @@ button {
 
 .font-display {
   font-family:
-    "Big Shoulders Display", Impact, "Arial Narrow", ui-sans-serif,
+    var(--font-display), "Big Shoulders Display", Impact, "Arial Narrow", ui-sans-serif,
     sans-serif;
 }
 
 .font-detail {
   font-family:
-    "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo,
+    var(--font-detail), "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", Meiryo,
     sans-serif;
 }
 
@@ -79,7 +80,7 @@ button {
   margin: 0;
   padding-bottom: 12px;
   font-family:
-    "Big Shoulders Display", Impact, "Arial Narrow", ui-sans-serif,
+    var(--font-display), "Big Shoulders Display", Impact, "Arial Narrow", ui-sans-serif,
     sans-serif;
   font-size: clamp(3rem, 8vw, 4.6rem);
   line-height: 1;
@@ -90,7 +91,7 @@ button {
   margin-top: -4px;
   color: #555555;
   font-family:
-    "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
+    var(--font-main), "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
     system-ui, sans-serif;
   font-size: 1.2rem;
 }
@@ -185,7 +186,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   font-size: 1rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   animation: bounce 2s infinite;
 }
 
