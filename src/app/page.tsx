@@ -225,15 +225,26 @@ export default function Home() {
       <section id="access" className="section-container">
         <SectionTitle title="Access" label="アクセス" />
         <div className="access-box mt-12">
-          <div className="map-placeholder">Google Map（予定）</div>
+          <iframe
+            className="map-frame"
+            title="東京大学 工学部6号館の地図"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.4909203284556!2d139.75852007666546!3d35.71414327257669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c31b6a0c8eb%3A0xb76f6e1eaadfecf6!2z44CSMTEzLTAwMzMg5p2x5Lqs6YO95paH5Lqs5Yy65pys6YO377yX5LiB55uu77yTIOW3pTblj7fppKg!5e0!3m2!1sja!2sjp!4v1740764212343!5m2!1sja!2sjp"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
           <div className="flex-1">
             <h3 className="text-2xl font-bold">東京大学 本郷キャンパス</h3>
             <p className="mt-5 leading-8">工学部 6号館 2階・3階</p>
             <hr className="my-6 border-neutral-200" />
             <p className="text-base leading-8">
-              地下鉄南北線「東大前」駅 徒歩5分
-              <br />
-              地下鉄丸ノ内線「本郷三丁目」駅 徒歩10分
+            本郷三丁目駅（地下鉄丸の内線）より徒歩8分
+            <br />
+            湯島駅または根津駅（地下鉄千代田線）より徒歩10分
+            <br />
+            東大前駅（地下鉄南北線）より徒歩5分
+            <br />
+            春日駅（地下鉄三田線）より徒歩15分
             </p>
           </div>
         </div>

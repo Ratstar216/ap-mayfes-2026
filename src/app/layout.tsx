@@ -18,6 +18,7 @@ const bigShoulders = Big_Shoulders({
   weight: ["300"],
   variable: "--font-display",
   display: "swap",
+  adjustFontFallback: false,
 });
 
 const zenMaruGothic = Zen_Maru_Gothic({
