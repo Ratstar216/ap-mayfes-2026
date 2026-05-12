@@ -305,7 +305,6 @@ export default function Home() {
                 initial={false}
                 animate={{
                   opacity: activePanel === item.id ? 1 : 0,
-                  y: activePanel === item.id ? 0 : 12,
                   pointerEvents: activePanel === item.id ? "auto" : "none",
                 }}
                 transition={{ duration: 0.2 }}
