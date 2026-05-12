@@ -199,7 +199,7 @@ export default function Home() {
       </header>
 
       <section
-        id="about"
+        // id="about"
         className="grid min-h-screen items-center gap-8 px-6 pb-20 pt-28 sm:px-10 lg:grid-cols-2 lg:px-[10%]"
       >
         <motion.div
@@ -250,6 +250,19 @@ export default function Home() {
             </div>
           </div>
         </motion.div>
+      </section>
+
+      <section id="about" className="section-container about-section" aria-labelledby="about-title">
+        <SectionTitle id="about-title" title="About" label="概要" />
+        <motion.p
+          className="about-copy"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
+          工学博覧会は、東京大学工学部計数工学科と物理工学科の学生が合同で主催する五月祭の展示です。数学、物理、情報などの分野を楽しく学べます。ぜひお越しください！
+        </motion.p>
       </section>
 
       <section id="exhibitions" aria-labelledby="exhibitions-title">
