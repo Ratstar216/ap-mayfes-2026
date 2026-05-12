@@ -183,7 +183,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-white/85 px-5 backdrop-blur-md sm:px-12">
         <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-5">
           <a
-            href="#about"
+            href="#hero"
             className="font-main text-2xl tracking-wide sm:text-3xl"
           >
             工学博覧会 2026
@@ -199,7 +199,7 @@ export default function Home() {
       </header>
 
       <section
-        // id="about"
+        id="hero"
         className="grid min-h-screen items-center gap-8 px-6 pb-20 pt-28 sm:px-10 lg:grid-cols-2 lg:px-[10%]"
       >
         <motion.div
