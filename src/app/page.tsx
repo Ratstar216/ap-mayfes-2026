@@ -142,7 +142,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
         >
-          <div className="text-3xl font-semibold leading-[1.45] sm:text-5xl">
+          <div className="text-3xl font-main leading-[1.45] sm:text-5xl">
             <p>物 理 工 学 科</p>
             <p>計 数 工 学 科</p>
             <div className="hero-course-list mt-2 text-2xl leading-[1.55] sm:text-3xl">
@@ -280,7 +280,7 @@ export default function Home() {
             allowFullScreen
           />
           <div className="flex-1">
-            <h3 className="text-2xl font-bold">東京大学 本郷キャンパス</h3>
+            <h3 className="text-2xl">東京大学 本郷キャンパス</h3>
             <p className="mt-5 leading-8">工学部 6号館 2階・3階</p>
             <hr className="my-6 border-neutral-200" />
             <p className="text-base leading-8">
