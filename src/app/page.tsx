@@ -16,7 +16,21 @@ const navItems = [
 
 const electionUrl = "https://visitor.gogatsusai.jp/project/054";
 
-const exhibitions = [
+type Exhibition = {
+  id: string;
+  side: "left" | "right";
+  title: string;
+  copy: string;
+  color: string;
+  icon: string;
+  iconAlt: string;
+  person: string;
+  personAlt: string;
+  personWidth?: number;
+  personOffset?: string;
+};
+
+const exhibitions: Exhibition[] = [
   {
     id: "board-game",
     side: "left",
@@ -117,7 +131,7 @@ const exhibitions = [
   },
   
   
-] //as const;
+];
 
 const stamps = ["量子", "光", "物性"];
 
@@ -243,8 +257,8 @@ export default function Home() {
 
       <div className="mt-14">
         {exhibitions.map((item) => {
-          const pWidth = (item as any).personWidth || 300;
-          const pOffset = (item as any).personOffset || '0px';
+          const pWidth = item.personWidth ?? 300;
+          const pOffset = item.personOffset ?? "0px";
         
           return (
             <article
