@@ -91,11 +91,11 @@ export default function Home() {
         <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between gap-5">
           <a
             href="#about"
-            className="font-display text-2xl font-semibold tracking-wide sm:text-3xl"
+            className="font-main text-2xl tracking-wide sm:text-3xl"
           >
             工学博覧会 2026
           </a>
-          <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 text-sm font-semibold sm:gap-x-5 sm:text-base">
+          <nav className="flex flex-wrap justify-end gap-x-3 gap-y-1 text-sm font-main sm:gap-x-5 sm:text-base">
             {navItems.map((item) => (
               <a key={item.href} href={item.href} className="hover:opacity-65">
                 {item.label}
@@ -248,7 +248,7 @@ export default function Home() {
             transition={{ duration: 0.55, ease: "easeOut" }}
           >
             <div className="election-copy">
-              <h3 className="text-3xl font-bold leading-tight sm:text-5xl">
+              <h3 className="text-3xl font-main leading-tight sm:text-5xl">
                 工学博覧会に投票する
               </h3>
               <p className="mt-5 max-w-2xl leading-8">
