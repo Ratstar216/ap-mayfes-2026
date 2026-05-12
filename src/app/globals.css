@@ -98,32 +98,38 @@ button {
 
 .section-title {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding-bottom: 12px;
-  font-family:
-    var(--font-display), "Big Shoulders", Impact, "Arial Narrow", ui-sans-serif,
-    sans-serif;
-  font-size: clamp(3rem, 8vw, 4.6rem);
-  line-height: 1;
+  width: min(760px, calc(100vw - 40px));
+  line-height: 1.05;
 }
 
-.section-title > span:first-of-type {
+.section-title-label {
   display: block;
-  margin-top: -4px;
-  color: #555555;
+  color: #000000;
   font-family:
     var(--font-main), "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
     system-ui, sans-serif;
-  font-size: 1.2rem;
+  font-size: clamp(3.2rem, 8.5vw, 5.8rem);
+}
+
+.section-title-text {
+  display: block;
+  color: #000000;
+  font-family:
+    var(--font-display), "Big Shoulders", Impact, "Arial Narrow", ui-sans-serif,
+    sans-serif;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  line-height: 1.1;
 }
 
 .title-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  display: block;
   height: 4px;
   width: 100%;
+  margin: 10px 0 12px;
   transform-origin: left center;
   background: var(--floor);
 }

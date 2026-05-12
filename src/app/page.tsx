@@ -378,8 +378,7 @@ function SectionTitle({
         whileInView="visible"
         viewport={{ once: true, amount: 0.5 }}
       >
-        {title}
-        <span>{label}</span>
+        <span className="section-title-label">{label}</span>
         <motion.span
           aria-hidden="true"
           className="title-line"
@@ -389,6 +388,7 @@ function SectionTitle({
           }}
           transition={{ duration: 1, ease: "easeOut" }}
         />
+        <span className="section-title-text">{title}</span>
       </motion.h2>
     </div>
   );
