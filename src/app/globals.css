@@ -280,6 +280,116 @@ button {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.magazine-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1fr);
+  gap: 44px;
+  align-items: center;
+  margin-top: 44px;
+  border: 4px solid #000000;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 241, 0, 0.28), rgba(77, 196, 255, 0.18)),
+    #ffffff;
+  padding: 34px;
+  box-shadow: 14px 14px 0 #000000;
+}
+
+.magazine-cover-wrap {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 370px);
+}
+
+.magazine-cover-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 14px -14px -14px 14px;
+  z-index: 0;
+  border: 3px solid #000000;
+  border-radius: 18px;
+  background: #fff100;
+}
+
+.magazine-cover {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid #000000;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+.magazine-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+  line-height: 1.85;
+}
+
+.magazine-lead {
+  font-size: clamp(1.28rem, 2.1vw, 1.65rem);
+  line-height: 1.75;
+}
+
+.magazine-specs {
+  display: grid;
+  gap: 12px;
+  margin: 8px 0 0;
+}
+
+.magazine-specs div {
+  display: grid;
+  grid-template-columns: 9em 1fr;
+  gap: 18px;
+  align-items: baseline;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.12);
+  padding: 0 0 12px;
+}
+
+.magazine-specs dt {
+  color: #000000;
+  font-size: 1.05rem;
+}
+
+.magazine-specs dd {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.76);
+}
+
+.magazine-button {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 62px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 3px solid #000000;
+  border-radius: 999px;
+  background: #000000;
+  padding: 0 28px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.magazine-button:hover,
+.magazine-button:focus-visible {
+  transform: translate(-3px, -3px);
+  background: #4dc4ff;
+  box-shadow: 6px 6px 0 #000000;
+  color: #000000;
+}
+
 .election-panel {
   position: relative;
   display: grid;
@@ -483,6 +593,30 @@ button {
   .access-box {
     flex-direction: column;
     padding: 28px;
+  }
+
+  .magazine-panel {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 26px 22px;
+    box-shadow: 8px 8px 0 #000000;
+  }
+
+  .magazine-cover-wrap {
+    width: min(86%, 320px);
+  }
+
+  .magazine-copy {
+    gap: 18px;
+  }
+
+  .magazine-specs div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .magazine-button {
+    width: 100%;
   }
 
   .related-links-columns {

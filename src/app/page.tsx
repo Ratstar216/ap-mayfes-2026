@@ -15,6 +15,7 @@ const navItems = [
 ];
 
 const electionUrl = "https://visitor.gogatsusai.jp/project/054";
+const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
 
 type Exhibition = {
   id: string;
@@ -369,9 +370,56 @@ export default function Home() {
 
       <section id="magazine" className="section-container stamp-section">
         <SectionTitle title="Pathway Into Applied Physics" label="応用物理の散歩道" />
-        <p className="mx-auto mt-10 max-w-3xl text-center leading-8">
-          工学博覧会の展示に関する記事を掲載しています。（仮）
-        </p>
+        <motion.div
+          className="magazine-panel"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
+          <div className="magazine-cover-wrap">
+            <Image
+              src="/magazine/magazine-cover.webp"
+              alt="応用物理の散歩道の表紙"
+              width={708}
+              height={1000}
+              className="magazine-cover"
+            />
+          </div>
+          <div className="magazine-copy">
+            <p className="magazine-lead">
+              「応用物理の散歩道」は、物理工学科・計数工学科の学生が
+              それぞれの専門や関心を記事にしたマガジンです。
+            </p>
+            <p>
+              工学博覧会の展示にまつわる理論の解説、学生目線での学科生活、
+              個人の学問的関心についての記事を収録しています。
+            </p>
+            <dl className="magazine-specs">
+              <div>
+                <dt>B5版</dt>
+                <dd>218ページ</dd>
+              </div>
+              <div>
+                <dt>会場販売</dt>
+                <dd>書籍版 500円</dd>
+              </div>
+              <div>
+                <dt>オンライン販売</dt>
+                <dd>PDF版 450円</dd>
+              </div>
+            </dl>
+            <a
+              href={magazineUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="magazine-button"
+            >
+              詳細・購入ページへ
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </motion.div>
       </section>
 
       <section id="mayfes-election" className="section-container">
