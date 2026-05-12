@@ -249,12 +249,12 @@ button {
 
 .person-left {
   bottom: -12px;
-  left: 20%;
+  left: 5%;
   width: 400px;
 }
 
 .person-right {
-  right: 20%;
+  right: 10%;
   bottom: -50px;
   width: 300px;
 }
@@ -423,7 +423,7 @@ button {
 
   .exhibition-block {
     min-height: 430px;
-    margin-bottom: -100px;
+    margin-bottom: 100px;
     /*初期値 180px*/
   }
 
@@ -445,12 +445,12 @@ button {
   }
 
   .person-left {
-    left: 8%;
+    left: -60%;
     width: 320px;
   }
 
   .person-right {
-    right: 8%;
+    right: -40%;
     width: 250px;
   }
 
