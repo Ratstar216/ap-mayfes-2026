@@ -88,7 +88,7 @@ const exhibitions = [
     side: "left",
     title: "確率統計班",
     copy: "確率統計の不思議な性質を体験型展示で解き明かします。（仮）",
-    color: "#03AF7A",
+    color: "#4dc4ff",
     icon: "/expo-assets/statistics.svg",
     iconAlt: "確率統計班",
     person: "/expo-assets/man-reading.gif",
