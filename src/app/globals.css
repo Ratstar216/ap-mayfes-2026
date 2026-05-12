@@ -302,7 +302,7 @@ button {
   padding: 0 28px;
   color: #ffffff;
   font-size: 1.1rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   text-decoration: none;
   white-space: nowrap;
   transition:
@@ -367,7 +367,7 @@ button {
 .related-link-group a {
   color: rgba(0, 0, 0, 0.72);
   font-size: 1.25rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 4px;

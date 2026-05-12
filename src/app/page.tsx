@@ -8,6 +8,7 @@ const navItems = [
   { label: "概要", href: "#about" },
   { label: "展示一覧", href: "#exhibitions" },
   { label: "スタンプ", href: "#stamp" },
+  { label: "散歩道", href: "#magazine"},
   { label: "総選挙", href: "#mayfes-election" },
   { label: "アクセス", href: "#access" },
   { label: "関連リンク", href: "#related-links" },
@@ -304,6 +305,13 @@ export default function Home() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section id="magazine" className="section-container stamp-section">
+        <SectionTitle title="Pathway Into Applied Physics" label="応用物理の散歩道" />
+        <p className="mx-auto mt-10 max-w-3xl text-center leading-8">
+          工学博覧会の展示に関する記事を掲載しています。（仮）
+        </p>
       </section>
 
       <section id="mayfes-election" className="section-container">
