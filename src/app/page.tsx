@@ -27,6 +27,7 @@ const exhibitions = [
     iconAlt: "ボードゲーム班",
     person: "/expo-assets/man-reading.gif",
     personAlt: "本を読んでいる男性",
+    personWidth: 400,
   },
   {
     id: "security",
@@ -49,6 +50,8 @@ const exhibitions = [
     iconAlt: "光班",
     person: "/expo-assets/man-waving.gif",
     personAlt: "手を振っている男性",
+    personWidth: 450,
+    personOffset: "12px",
   },
   {
     id: "finance",
@@ -60,6 +63,8 @@ const exhibitions = [
     iconAlt: "金融班",
     person: "/expo-assets/woman-writing.gif",
     personAlt: "物を書いている女性",
+    personWidth: 400,
+    personOffset: "-25px",
   },
   {
     id: "materials",
@@ -71,6 +76,8 @@ const exhibitions = [
     iconAlt: "物性班",
     person: "/expo-assets/man-thinking.gif",
     personAlt: "考えている男性",
+    personWidth: 400,
+    personOffset: "70px",
   },
   {
     id: "control",
@@ -82,6 +89,8 @@ const exhibitions = [
     iconAlt: "制御班",
     person: "/expo-assets/woman-waving.gif",
     personAlt: "手を振っている女性",
+    personWidth: 420,
+    personOffset: "-45px",
   },
   {
     id: "statistics",
@@ -93,6 +102,7 @@ const exhibitions = [
     iconAlt: "確率統計班",
     person: "/expo-assets/man-reading.gif",
     personAlt: "本を読んでいる男性",
+    personWidth: 400,
   },
   {
     id: "quantum",
@@ -107,7 +117,7 @@ const exhibitions = [
   },
   
   
-] as const;
+] //as const;
 
 const stamps = ["量子", "光", "物性"];
 
@@ -231,8 +241,12 @@ export default function Home() {
       <section id="exhibitions" aria-labelledby="exhibitions-title">
         <SectionTitle id="exhibitions-title" title="Exhibitions" label="展示一覧" />
 
-        <div className="mt-14">
-          {exhibitions.map((item) => (
+      <div className="mt-14">
+        {exhibitions.map((item) => {
+          const pWidth = (item as any).personWidth || 300;
+          const pOffset = (item as any).personOffset || '0px';
+        
+          return (
             <article
               key={item.id}
               className={`exhibition-block ${
@@ -243,6 +257,8 @@ export default function Home() {
                 type="button"
                 onClick={() => togglePanel(item.id)}
                 className="icon-trigger-box"
+                //style={{ zIndex: 30, position: 'relative' }} 
+                style={{ zIndex: 30 }}
                 aria-expanded={activePanel === item.id}
                 aria-controls={`${item.id}-panel`}
               >
@@ -256,11 +272,22 @@ export default function Home() {
                 </span>
                 <span className="sr-only">{item.iconAlt}の詳細を表示</span>
               </button>
+            
+              {activePanel === item.id && (
+                <div
+                  className="fixed inset-0 z-10"
+                  onClick={() => setActivePanel(null)}
+                />
+              )}
 
               <motion.div
                 id={`${item.id}-panel`}
                 className="details-panel"
-                style={{ borderTopColor: item.color }}
+                onClick={(e) => e.stopPropagation()} 
+                style={{ 
+                  borderTopColor: item.color,
+                  zIndex: 40
+                }}
                 initial={false}
                 animate={{
                   opacity: activePanel === item.id ? 1 : 0,
@@ -272,22 +299,28 @@ export default function Home() {
                 <h3 className="font-detail text-2xl font-bold">{item.title}</h3>
                 <p className="mt-4 font-detail leading-8">{item.copy}</p>
               </motion.div>
-
+              
               <div className="floor-platform">
                 <Image
                   src={item.person}
                   alt={item.personAlt}
-                  width={item.side === "left" ? 400 : 300}
+                  width={pWidth}
                   height={300}
                   unoptimized
                   className={`person-gif ${
                     item.side === "left" ? "person-left" : "person-right"
                   }`}
+                  style={{
+                    transform: `translateY(${pOffset})`,
+                    width: `${pWidth}px`,
+                    height: "auto",
+                  }}
                 />
               </div>
             </article>
-          ))}
-        </div>
+          );
+        })}
+      </div>
       </section>
 
       <section id="stamp" className="section-container stamp-section">

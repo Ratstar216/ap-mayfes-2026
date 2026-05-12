@@ -137,7 +137,8 @@ button {
 .exhibition-block {
   position: relative;
   min-height: 450px;
-  margin-bottom: 250px;
+  margin-bottom: -100px;
+  /*初期値 250px*/
 }
 
 .floor-platform {
@@ -159,7 +160,7 @@ button {
 .icon-trigger-box {
   position: absolute;
   top: 0;
-  z-index: 10;
+  z-index: 30;
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -221,7 +222,7 @@ button {
 .details-panel {
   position: absolute;
   top: 180px;
-  z-index: 20;
+  z-index: 40;
   width: min(400px, calc(100vw - 40px));
   border-top: 12px solid;
   border-radius: 20px;
@@ -242,6 +243,8 @@ button {
   position: absolute;
   height: auto;
   max-width: none;
+  /*z-index: 1;*/
+  pointer-events: none;
 }
 
 .person-left {
@@ -420,7 +423,8 @@ button {
 
   .exhibition-block {
     min-height: 430px;
-    margin-bottom: 180px;
+    margin-bottom: -100px;
+    /*初期値 180px*/
   }
 
   .floor-platform {
