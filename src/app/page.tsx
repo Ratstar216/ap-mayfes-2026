@@ -321,6 +321,7 @@ export default function Home() {
         <p className="mt-6 font-display text-xl">
           &copy; 工学博覧会 2026
         </p>
+        <p className="mt-3 text-base">Designed by Freepik</p>
       </footer>
     </main>
   );
