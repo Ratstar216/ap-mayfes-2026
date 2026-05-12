@@ -9,8 +9,8 @@ const navItems = [
   { label: "展示一覧", href: "#exhibitions" },
   { label: "スタンプ", href: "#stamp" },
   { label: "総選挙", href: "#mayfes-election" },
-  { label: "協力研究室", href: "#labs" },
   { label: "アクセス", href: "#access" },
+  { label: "関連リンク", href: "#related-links" },
 ];
 
 const electionUrl = "https://visitor.gogatsusai.jp/project/054";
@@ -42,15 +42,40 @@ const exhibitions = [
 
 const stamps = ["量子", "光", "物性"];
 
-const labs = [
+const relatedLinkGroups = [
   {
-    title: "物理工学専攻 〇〇研究室",
-    copy: "光格子時計や量子計測など、世界最高精度の時間計測に挑んでいます。",
+    title: "【大学・学部・学科】",
+    links: [
+      { label: "東京大学公式HP", href: "https://www.u-tokyo.ac.jp/ja/index.html" },
+      // { label: "東京大学工学部公式HP", href: "https://www.t.u-tokyo.ac.jp/" },
+      { label: "物理工学科公式HP", href: "https://www.ap.t.u-tokyo.ac.jp" },
+      { label: "計数工学科公式HP", href: "https://www.keisu.t.u-tokyo.ac.jp" },
+    ],
   },
   {
-    title: "計数工学専攻 △△研究室",
-    copy: "複雑な社会現象や生体現象を数理モデルで解き明かす研究を行っています。",
+    title: "【五月祭関連】",
+    links: [
+      { label: "五月祭公式HP", href: "https://gogatsusai.jp/" },
+      { label: "工学博覧会 投票ページ", href: electionUrl },
+    ],
   },
+  // {
+  //   title: "【各種SNS】",
+  //   links: [
+  //     { label: "X 工学博覧会", href: "https://x.com/apmayfes" },
+  //     { label: "Instagram 工学博覧会", href: "https://www.instagram.com/apmayfest" },
+  //   ],
+  // },
+  {
+    title: "【ご協力者様（敬称略・五十音順）】",
+    links: [
+      { label: "東京大学工学部(仮)", href: "https://www.t.u-tokyo.ac.jp/" },
+      // { label: "東京大学物理工学科", href: "https://www.ap.t.u-tokyo.ac.jp/" },
+      // { label: "東京大学計数工学科", href: "https://www.keisu.t.u-tokyo.ac.jp/" },
+      // { label: "東京大学数理情報工学", href: "https://www.mis.t.u-tokyo.ac.jp/" },
+      // { label: "東京大学システム情報工学", href: "https://www.sis.t.u-tokyo.ac.jp/" },
+    ]
+  }
 ];
 
 export default function Home() {
@@ -243,18 +268,6 @@ export default function Home() {
           </motion.div>
       </section>
 
-      <section id="labs" className="section-container">
-        <SectionTitle title="Laboratories" label="協力研究室" />
-        <div className="mt-12 grid gap-7">
-          {labs.map((lab) => (
-            <article key={lab.title} className="lab-card">
-              <h3 className="text-2xl font-bold">{lab.title}</h3>
-              <p className="mt-4 leading-8">{lab.copy}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section id="access" className="section-container">
         <SectionTitle title="Access" label="アクセス" />
         <div className="access-box mt-12">
@@ -280,6 +293,26 @@ export default function Home() {
             春日駅（地下鉄三田線）より徒歩15分
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="related-links" className="section-container related-links-section">
+        <SectionTitle title="Links" label="関連リンク" />
+        <div className="related-links-columns">
+          {relatedLinkGroups.map((group) => (
+            <section key={group.title} className="related-link-group">
+              <h3>{group.title}</h3>
+              <ul>
+                {group.links.map((link) => (
+                  <li key={link.href}>
+                    <a href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
         </div>
       </section>
 
