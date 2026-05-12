@@ -118,16 +118,16 @@ export default function Home() {
           transition={{ duration: 0.65, delay: 0.1, ease: "easeOut" }}
         >
           <div className="text-3xl font-semibold leading-[1.45] sm:text-5xl">
-            <p>物理工学科</p>
-            <p>計数工学科</p>
+            <p>物 理 工 学 科</p>
+            <p>計 数 工 学 科</p>
             <div className="hero-course-list mt-2 text-2xl leading-[1.55] sm:text-3xl">
               <p>
                 <span aria-hidden="true" />
-                <span>数理情報工学</span>
+                <span>数 理 情 報 工 学</span>
               </p>
               <p>
                 <span aria-hidden="true" />
-                <span>システム情報工学</span>
+                <span>シ ス テ ム 情 報 工 学</span>
               </p>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function Home() {
       <section id="stamp" className="section-container stamp-section">
         <SectionTitle title="Stamp Rally" label="スタンプラリー" />
         <p className="mx-auto mt-10 max-w-3xl text-center leading-8">
-          各展示を巡ってスタンプを集めよう！全て集めると限定特典をプレゼント。
+          3つ以上の班をまわって各班でゲームやクイズにクリアすると、限定特典をプレゼント！
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-6">
           {stamps.map((stamp) => (
