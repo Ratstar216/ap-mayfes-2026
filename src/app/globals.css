@@ -102,7 +102,7 @@ button {
   flex-direction: column;
   align-items: center;
   margin: 0;
-  width: min(760px, calc(100vw - 40px));
+  width: min(620px, calc(100vw - 40px));
   line-height: 1.05;
 }
 
@@ -112,7 +112,7 @@ button {
   font-family:
     var(--font-main), "IBM Plex Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo,
     system-ui, sans-serif;
-  font-size: clamp(3.2rem, 8.5vw, 5.8rem);
+  font-size: clamp(2.45rem, 6.6vw, 4.35rem);
 }
 
 .section-title-text {
@@ -121,7 +121,7 @@ button {
   font-family:
     var(--font-display), "Big Shoulders", Impact, "Arial Narrow", ui-sans-serif,
     sans-serif;
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-size: clamp(1.35rem, 3vw, 2.05rem);
   line-height: 1.1;
 }
 
@@ -145,7 +145,7 @@ button {
   border-left: 6px solid var(--floor);
   background: rgba(255, 255, 255, 0.66);
   padding: 34px 38px;
-  font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+  font-size: clamp(1.15rem, 1.9vw, 1.45rem);
   line-height: 2;
 }
 
@@ -681,12 +681,12 @@ button {
   }
 
   #magazine .section-title-label {
-    font-size: clamp(1.95rem, 10.4vw, 2.55rem);
+    font-size: clamp(1.55rem, 8.2vw, 2rem);
     white-space: nowrap;
   }
 
   #stamp .section-title-label {
-    font-size: clamp(2.6rem, 13.4vw, 3.35rem);
+    font-size: clamp(2rem, 10.6vw, 2.6rem);
     white-space: nowrap;
   }
 
