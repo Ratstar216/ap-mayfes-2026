@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 const navItems = [
@@ -422,13 +422,24 @@ export default function Home() {
                         </button>
                       )}
                       <div className="expo-detail-slide">
-                        <Image
-                          src={activeDetail.src}
-                          alt={activeDetail.alt}
-                          fill
-                          sizes="400px"
-                          className="expo-detail-photo"
-                        />
+                        <AnimatePresence mode="wait" initial={false}>
+                          <motion.div
+                            key={activeDetail.src}
+                            className="expo-detail-image-layer"
+                            initial={{ opacity: 0, x: 24 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -24 }}
+                            transition={{ duration: 0.28, ease: "easeOut" }}
+                          >
+                            <Image
+                              src={activeDetail.src}
+                              alt={activeDetail.alt}
+                              fill
+                              sizes="400px"
+                              className="expo-detail-photo"
+                            />
+                          </motion.div>
+                        </AnimatePresence>
                       </div>
                       {detailImages.length > 1 && (
                         <button

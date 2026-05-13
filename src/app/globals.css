@@ -670,6 +670,11 @@ button {
     background: #eef4f8;
   }
 
+  .expo-detail-image-layer {
+    position: absolute;
+    inset: 0;
+  }
+
   .expo-detail-photo {
     object-fit: contain;
   }
