@@ -373,17 +373,18 @@ export default function Home() {
             </p>
             <div className="stamp-copy-column">
               <ul className="stamp-rules">
-                <li>各班の課題クリアごとにスタンプ1つ進呈</li>
+                <li>各班の課題クリアにつきスタンプ1つ</li>
                 <li>スタンプ3つで景品1つと交換</li>
                 <li>景品の交換は来場者1名につき1回まで</li>
               </ul>
             </div>
             <div className="stamp-copy-column">
-              {/* <div className="stamp-exchange">
-                <p className="stamp-room">景品交換: 工学部6号館 2階 63号講義室 受付</p>
-                <p>3Dプリンターで印刷された限定景品をご用意しています。</p>
-              </div> */}
-              景品交換: 工学部6号館 2階 63号講義室 受付
+              <div className="stamp-exchange">
+                <p className="stamp-room">景品交換: <br /> 工学部6号館 2階 63号講義室 受付 </p>
+                <p className="stamp-prize-line">
+                  景品: <br /> 3Dプリンターで制作した、展示にまつわるものなど（画像参照）
+                </p>
+              </div>
               <p className="stamp-note">
                 ※景品の個数には限りがあります。先着順でのお渡しとなります。
               </p>

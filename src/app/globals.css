@@ -328,6 +328,11 @@ button {
   gap: 20px;
 }
 
+.stamp-copy-column + .stamp-copy-column {
+  border-left: 2px dashed rgba(0, 90, 255, 0.45);
+  padding-left: 24px;
+}
+
 .stamp-lead {
   grid-column: 1 / -1;
   margin: 0;
@@ -339,16 +344,28 @@ button {
   display: grid;
   gap: 14px;
   margin: 0;
-  padding-left: 1.25em;
+  padding: 0;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   line-height: 1.65;
+  list-style: none;
 }
 
-.stamp-rules li::marker {
+.stamp-rules li {
+  position: relative;
+  padding-left: 1.75em;
+}
+
+.stamp-rules li::before {
+  content: "★";
+  position: absolute;
+  top: 0.02em;
+  left: 0;
   color: #005aff;
+  font-size: 1.05em;
+  line-height: inherit;
 }
 
-.stamp-exchange {
+/* .stamp-exchange {
   border-left: 6px solid #005aff;
   background: rgba(255, 255, 255, 0.74);
   padding: 18px 20px;
@@ -357,15 +374,43 @@ button {
 
 .stamp-exchange p {
   margin: 0;
-}
+} */
 
 .stamp-room {
-  font-size: 1.02rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  /* font-size: 1.02rem; */
+  font-size: 1.05rem;
+}
+
+.stamp-room::before {
+  content: "📍";
+  flex: 0 0 auto;
+  line-height: 1.65;
+}
+
+.stamp-prize-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45em;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.stamp-prize-line::before {
+  content: "🎁";
+  flex: 0 0 auto;
+}
+
+.stamp-prize-line span {
+  font-weight: 700;
 }
 
 .stamp-note {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 0.75rem;
   line-height: 1.7;
 }
 
@@ -714,13 +759,20 @@ button {
     padding: 24px 22px;
   }
 
+  .stamp-copy-column + .stamp-copy-column {
+    border-top: 2px dashed rgba(0, 90, 255, 0.45);
+    border-left: 0;
+    padding-top: 18px;
+    padding-left: 0;
+  }
+
   .stamp-rules {
     gap: 10px;
   }
 
-  .stamp-exchange {
+  /* .stamp-exchange {
     padding: 16px 18px;
-  }
+  } */
 
   .magazine-panel {
     grid-template-columns: 1fr;
