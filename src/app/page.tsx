@@ -163,6 +163,22 @@ const exhibitions: Exhibition[] = [
         src: "/expo-details/statistics/statistics.webp",
         alt: "確率統計班の展示写真",
       },
+      {
+        src: "/expo-details/statistics/monty_hall_simulator.webp",
+        alt: "モンティ・ホール問題シミュレーター",
+      },
+      {
+        src: "/expo-details/statistics/submarine_search.webp",
+        alt: "潜水艦探索ゲーム",
+      },
+      {
+        src: "/expo-details/statistics/wisdom_of_crowds.webp",
+        alt: "群衆の知恵",
+      },
+      {
+        src: "/expo-details/statistics/wait_time.webp",
+        alt: "待ち時間",
+      },
     ],
     person: "/expo-assets/man-reading.gif",
     personAlt: "本を読んでいる男性",
