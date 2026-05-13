@@ -254,6 +254,10 @@ button {
   right: 35%;
 }
 
+.expo-detail-carousel {
+  display: none;
+}
+
 .person-gif {
   position: absolute;
   height: auto;
@@ -639,6 +643,53 @@ button {
 .related-link-group a:hover,
 .related-link-group a:focus-visible {
   color: #000000;
+}
+
+@media (min-width: 769px) {
+  .expo-detail-carousel {
+    display: grid;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 24px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: rgba(0, 0, 0, 0.42) rgba(0, 0, 0, 0.08);
+    scrollbar-width: thin;
+  }
+
+  .expo-detail-carousel::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .expo-detail-carousel::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.08);
+  }
+
+  .expo-detail-carousel::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.42);
+  }
+
+  .expo-detail-slide {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.04);
+    scroll-snap-align: start;
+  }
+
+  .expo-detail-photo {
+    object-fit: cover;
+  }
 }
 
 @keyframes floating {

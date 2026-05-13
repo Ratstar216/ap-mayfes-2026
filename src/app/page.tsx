@@ -25,6 +25,10 @@ type Exhibition = {
   color: string;
   icon: string;
   iconAlt: string;
+  detailImages?: {
+    src: string;
+    alt: string;
+  }[];
   person: string;
   personAlt: string;
   personWidth?: number;
@@ -40,6 +44,12 @@ const exhibitions: Exhibition[] = [
     color: "#FF4B00",
     icon: "/expo-assets/boardgame.svg",
     iconAlt: "ボードゲーム班",
+    detailImages: [
+      {
+        src: "/expo-details/boardgame/quoridor_web.webp",
+        alt: "コリドール対戦展示の様子",
+      },
+    ],
     person: "/expo-assets/man-reading.gif",
     personAlt: "本を読んでいる男性",
     personWidth: 400,
@@ -52,6 +62,16 @@ const exhibitions: Exhibition[] = [
     color: "#f6aa00",
     icon: "/expo-assets/security.svg",
     iconAlt: "セキュリティ班",
+    detailImages: [
+      {
+        src: "/expo-details/security/security-rsa.webp",
+        alt: "RSA暗号に関する展示",
+      },
+      {
+        src: "/expo-details/security/security-pkc.webp",
+        alt: "公開鍵暗号に関する展示",
+      },
+    ],
     person: "/expo-assets/woman-sitting.gif",
     personAlt: "座っている女性",
   },
@@ -63,6 +83,12 @@ const exhibitions: Exhibition[] = [
     color: "#FFF100",
     icon: "/expo-assets/light.svg",
     iconAlt: "光班",
+    detailImages: [
+      {
+        src: "/expo-details/light/light1.webp",
+        alt: "光班の展示写真",
+      },
+    ],
     person: "/expo-assets/man-waving.gif",
     personAlt: "手を振っている男性",
     personWidth: 450,
@@ -77,6 +103,12 @@ const exhibitions: Exhibition[] = [
     color: "#804000",
     icon: "/expo-assets/finance.svg",
     iconAlt: "金融班",
+    detailImages: [
+      {
+        src: "/expo-details/finance/finance.webp",
+        alt: "金融班の展示写真",
+      },
+    ],
     person: "/expo-assets/woman-writing.gif",
     personAlt: "物を書いている女性",
     personWidth: 400,
@@ -103,6 +135,16 @@ const exhibitions: Exhibition[] = [
     color: "#005AFF",
     icon: "/expo-assets/control.svg",
     iconAlt: "制御班",
+    detailImages: [
+      {
+        src: "/expo-details/control/control_reaction_wheel_jikki.webp",
+        alt: "リアクションホイール実機の展示",
+      },
+      {
+        src: "/expo-details/control/control_reaction_wheel_simulation.webp",
+        alt: "リアクションホイールシミュレーションの展示",
+      },
+    ],
     person: "/expo-assets/woman-waving.gif",
     personAlt: "手を振っている女性",
     personWidth: 420,
@@ -116,6 +158,12 @@ const exhibitions: Exhibition[] = [
     color: "#4dc4ff",
     icon: "/expo-assets/statistics.svg",
     iconAlt: "確率統計班",
+    detailImages: [
+      {
+        src: "/expo-details/statistics/statistics.webp",
+        alt: "確率統計班の展示写真",
+      },
+    ],
     person: "/expo-assets/man-reading.gif",
     personAlt: "本を読んでいる男性",
     personWidth: 400,
@@ -128,6 +176,16 @@ const exhibitions: Exhibition[] = [
     color: "#c8c8cb",
     icon: "/expo-assets/quantum.svg",
     iconAlt: "量子班",
+    detailImages: [
+      {
+        src: "/expo-details/quantum/quantum1.webp",
+        alt: "量子班の展示写真1",
+      },
+      {
+        src: "/expo-details/quantum/quantum2.webp",
+        alt: "量子班の展示写真2",
+      },
+    ],
     person: "/expo-assets/woman-sitting.gif",
     personAlt: "座っている女性",
   },
@@ -324,6 +382,24 @@ export default function Home() {
               >
                 <h3 className="font-detail text-2xl font-bold">{item.title}</h3>
                 <p className="mt-4 font-detail leading-8">{item.copy}</p>
+                {item.detailImages && item.detailImages.length > 0 && (
+                  <div
+                    className="expo-detail-carousel"
+                    aria-label={`${item.title}の展示写真`}
+                  >
+                    {item.detailImages.map((image) => (
+                      <div className="expo-detail-slide" key={image.src}>
+                        <Image
+                          src={image.src}
+                          alt={image.alt}
+                          fill
+                          sizes="400px"
+                          className="expo-detail-photo"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
               
               <div className="floor-platform">
