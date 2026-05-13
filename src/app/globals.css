@@ -388,12 +388,6 @@ button {
   font-size: 1.05rem;
 }
 
-.stamp-room::before {
-  content: "📍";
-  flex: 0 0 auto;
-  line-height: 1.65;
-}
-
 .stamp-prize-line {
   display: flex;
   align-items: flex-start;
@@ -403,12 +397,15 @@ button {
   line-height: 1.65;
 }
 
-.stamp-prize-line::before {
-  content: "🎁";
+.stamp-row-icon {
   flex: 0 0 auto;
+  width: 1.18em;
+  height: 1.18em;
+  margin-top: 0.15em;
+  color: #005aff;
 }
 
-.stamp-prize-line span {
+.stamp-prize-line strong {
   font-weight: 700;
 }
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Gift, MapPin } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
@@ -547,9 +548,13 @@ export default function Home() {
             </div>
             <div className="stamp-copy-column">
               <div className="stamp-exchange">
-                <p className="stamp-room">景品交換: <br /> 工学部6号館 2階 63号講義室 受付 </p>
+                <p className="stamp-room">
+                  <MapPin className="stamp-row-icon" aria-hidden="true" strokeWidth={2.4} />
+                  <span>景品交換: <br /> 工学部6号館 2階 63号講義室 受付 </span>
+                </p>
                 <p className="stamp-prize-line">
-                  景品: <br /> 3Dプリンターで制作した、展示にまつわるものなど（画像参照）
+                  <Gift className="stamp-row-icon" aria-hidden="true" strokeWidth={2.4} />
+                  <span><strong>景品:</strong> <br /> 3Dプリンターで制作した、展示にまつわるものなど（画像参照）</span>
                 </p>
               </div>
               <p className="stamp-note">
