@@ -231,9 +231,27 @@ const relatedLinkGroups = [
 
 export default function Home() {
   const [activePanel, setActivePanel] = useState<string | null>(null);
+  const [activeDetailImage, setActiveDetailImage] = useState<Record<string, number>>({});
 
   function togglePanel(id: string) {
     setActivePanel((current) => (current === id ? null : id));
+  }
+
+  function selectDetailImage(id: string, imageIndex: number) {
+    setActiveDetailImage((current) => ({
+      ...current,
+      [id]: imageIndex,
+    }));
+  }
+
+  function moveDetailImage(id: string, imageCount: number, step: number) {
+    setActiveDetailImage((current) => {
+      const currentIndex = current[id] ?? 0;
+      return {
+        ...current,
+        [id]: (currentIndex + step + imageCount) % imageCount,
+      };
+    });
   }
 
   return (
@@ -330,6 +348,9 @@ export default function Home() {
         {exhibitions.map((item) => {
           const pWidth = item.personWidth ?? 300;
           const pOffset = item.personOffset ?? "0px";
+          const detailImages = item.detailImages ?? [];
+          const detailImageIndex = activeDetailImage[item.id] ?? 0;
+          const activeDetail = detailImages[detailImageIndex] ?? detailImages[0];
         
           return (
             <article
@@ -382,22 +403,62 @@ export default function Home() {
               >
                 <h3 className="font-detail text-2xl font-bold">{item.title}</h3>
                 <p className="mt-4 font-detail leading-8">{item.copy}</p>
-                {item.detailImages && item.detailImages.length > 0 && (
+                {activePanel === item.id && activeDetail && (
                   <div
                     className="expo-detail-carousel"
                     aria-label={`${item.title}の展示写真`}
                   >
-                    {item.detailImages.map((image) => (
-                      <div className="expo-detail-slide" key={image.src}>
+                    <div className="expo-detail-photo-frame">
+                      {detailImages.length > 1 && (
+                        <button
+                          type="button"
+                          className="expo-detail-arrow expo-detail-arrow-prev"
+                          onClick={() =>
+                            moveDetailImage(item.id, detailImages.length, -1)
+                          }
+                          aria-label="前の写真"
+                        >
+                          <span aria-hidden="true">‹</span>
+                        </button>
+                      )}
+                      <div className="expo-detail-slide">
                         <Image
-                          src={image.src}
-                          alt={image.alt}
+                          src={activeDetail.src}
+                          alt={activeDetail.alt}
                           fill
                           sizes="400px"
                           className="expo-detail-photo"
                         />
                       </div>
-                    ))}
+                      {detailImages.length > 1 && (
+                        <button
+                          type="button"
+                          className="expo-detail-arrow expo-detail-arrow-next"
+                          onClick={() =>
+                            moveDetailImage(item.id, detailImages.length, 1)
+                          }
+                          aria-label="次の写真"
+                        >
+                          <span aria-hidden="true">›</span>
+                        </button>
+                      )}
+                    </div>
+                    {detailImages.length > 1 && (
+                      <div className="expo-detail-dots" aria-label="写真を選択">
+                        {detailImages.map((image, index) => (
+                          <button
+                            type="button"
+                            key={image.src}
+                            className={`expo-detail-dot ${
+                              index === detailImageIndex ? "is-active" : ""
+                            }`}
+                            onClick={() => selectDetailImage(item.id, index)}
+                            aria-label={`${index + 1}枚目の写真を表示`}
+                            aria-pressed={index === detailImageIndex}
+                          />
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </motion.div>
