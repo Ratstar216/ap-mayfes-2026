@@ -17,6 +17,11 @@ const navItems = [
 
 const electionUrl = "https://visitor.gogatsusai.jp/project/054";
 const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
+const assetBasePath = "/2026";
+
+function assetPath(path: string) {
+  return `${assetBasePath}${path}`;
+}
 
 type Exhibition = {
   id: string;
@@ -43,15 +48,15 @@ const exhibitions: Exhibition[] = [
     title: "ボードゲーム班",
     copy: "AIとあなた、どっちが上？深い洞察が試されるコリドールでAIに挑戦！実機でもスマホでも楽しめる対戦体験です！",
     color: "#FF4B00",
-    icon: "/expo-assets/boardgame.svg",
+    icon: assetPath("/expo-assets/boardgame.svg"),
     iconAlt: "ボードゲーム班",
     detailImages: [
       {
-        src: "/expo-details/boardgame/quoridor_web.webp",
+        src: assetPath("/expo-details/boardgame/quoridor_web.webp"),
         alt: "コリドール対戦展示の様子",
       },
     ],
-    person: "/expo-assets/man-reading.gif",
+    person: assetPath("/expo-assets/man-reading.gif"),
     personAlt: "本を読んでいる男性",
     personWidth: 400,
   },
@@ -61,19 +66,19 @@ const exhibitions: Exhibition[] = [
     title: "セキュリティ班",
     copy: "現代社会を支える情報の守り手、暗号技術の仕組みと未来について解説します。",
     color: "#f6aa00",
-    icon: "/expo-assets/security.svg",
+    icon: assetPath("/expo-assets/security.svg"),
     iconAlt: "セキュリティ班",
     detailImages: [
       {
-        src: "/expo-details/security/security-rsa.webp",
+        src: assetPath("/expo-details/security/security-rsa.webp"),
         alt: "RSA暗号に関する展示",
       },
       {
-        src: "/expo-details/security/security-pkc.webp",
+        src: assetPath("/expo-details/security/security-pkc.webp"),
         alt: "公開鍵暗号に関する展示",
       },
     ],
-    person: "/expo-assets/cat_right.gif",
+    person: assetPath("/expo-assets/cat_right.gif"),
     personAlt: "猫",
     personOffset: "-21px",
   },
@@ -83,15 +88,15 @@ const exhibitions: Exhibition[] = [
     title: "光班",
     copy: "光を知ろう。光で知ろう。",
     color: "#FFF100",
-    icon: "/expo-assets/light.svg",
+    icon: assetPath("/expo-assets/light.svg"),
     iconAlt: "光班",
     detailImages: [
       {
-        src: "/expo-details/light/light1.webp",
+        src: assetPath("/expo-details/light/light1.webp"),
         alt: "光班の展示写真",
       },
     ],
-    person: "/expo-assets/man-waving.gif",
+    person: assetPath("/expo-assets/man-waving.gif"),
     personAlt: "手を振っている男性",
     personWidth: 450,
     personOffset: "12px",
@@ -103,15 +108,15 @@ const exhibitions: Exhibition[] = [
     // copy: "数理モデルで再現された金融市場の値動きを見ながら自動取引AIとどちらがより利益を出せるか勝負しよう！！",
     copy: "一見縁遠い金融と数学ですが、実は金融は高度な数学の応用分野なんです。この展示では不確実性の裏に潜む数理をお見せします。",
     color: "#804000",
-    icon: "/expo-assets/finance.svg",
+    icon: assetPath("/expo-assets/finance.svg"),
     iconAlt: "金融班",
     detailImages: [
       {
-        src: "/expo-details/finance/finance.webp",
+        src: assetPath("/expo-details/finance/finance.webp"),
         alt: "金融班の展示写真",
       },
     ],
-    person: "/expo-assets/woman-sitting.gif",
+    person: assetPath("/expo-assets/woman-sitting.gif"),
     personAlt: "座っている女性",
     personWidth: 400,
     personOffset: "12px",
@@ -122,9 +127,9 @@ const exhibitions: Exhibition[] = [
     title: "物性班",
     copy: "物性班では「物質の性質」に着目し、その面白さを紹介しています。恒例の超伝導に加え、新しい展示にも挑戦したのでぜひお越しください！",
     color: "#03AF7A",
-    icon: "/expo-assets/materials.svg",
+    icon: assetPath("/expo-assets/materials.svg"),
     iconAlt: "物性班",
-    person: "/expo-assets/cat_left.gif",
+    person: assetPath("/expo-assets/cat_left.gif"),
     personAlt: "猫",
     personWidth: 400,
     personOffset: "32px",
@@ -135,19 +140,19 @@ const exhibitions: Exhibition[] = [
     title: "制御班",
     copy: "立方体の箱を辺で立たせるなんて不可能！？制御班はその不可能に立ち向かいます。制御工学の驚きをぜひ体験してください。",
     color: "#005AFF",
-    icon: "/expo-assets/control.svg",
+    icon: assetPath("/expo-assets/control.svg"),
     iconAlt: "制御班",
     detailImages: [
       {
-        src: "/expo-details/control/control_reaction_wheel_jikki.webp",
+        src: assetPath("/expo-details/control/control_reaction_wheel_jikki.webp"),
         alt: "リアクションホイール実機の展示",
       },
       {
-        src: "/expo-details/control/control_reaction_wheel_simulation.webp",
+        src: assetPath("/expo-details/control/control_reaction_wheel_simulation.webp"),
         alt: "リアクションホイールシミュレーションの展示",
       },
     ],
-    person: "/expo-assets/woman-writing.gif",
+    person: assetPath("/expo-assets/woman-writing.gif"),
     personAlt: "物を書いている女性",
     personWidth: 420,
     personOffset: "-25px",
@@ -158,31 +163,31 @@ const exhibitions: Exhibition[] = [
     title: "確率統計班",
     copy: "統計学や確率論が「見えないもの」や「予測不能なもの」をどのように解き明かすかを紹介します！",
     color: "#4dc4ff",
-    icon: "/expo-assets/statistics.svg",
+    icon: assetPath("/expo-assets/statistics.svg"),
     iconAlt: "確率統計班",
     detailImages: [
       {
-        src: "/expo-details/statistics/statistics.webp",
+        src: assetPath("/expo-details/statistics/statistics.webp"),
         alt: "確率統計班の展示写真",
       },
       {
-        src: "/expo-details/statistics/monty_hall_simulator.webp",
+        src: assetPath("/expo-details/statistics/monty_hall_simulator.webp"),
         alt: "モンティ・ホール問題シミュレーター",
       },
       {
-        src: "/expo-details/statistics/submarine_search.webp",
+        src: assetPath("/expo-details/statistics/submarine_search.webp"),
         alt: "潜水艦探索ゲーム",
       },
       {
-        src: "/expo-details/statistics/wisdom_of_crowds.webp",
+        src: assetPath("/expo-details/statistics/wisdom_of_crowds.webp"),
         alt: "群衆の知恵",
       },
       {
-        src: "/expo-details/statistics/wait_time.webp",
+        src: assetPath("/expo-details/statistics/wait_time.webp"),
         alt: "待ち時間",
       },
     ],
-    person: "/expo-assets/man-thinking.gif",
+    person: assetPath("/expo-assets/man-thinking.gif"),
     personAlt: "考えている男性",
     personWidth: 400,
     personOffset: "70px",
@@ -193,19 +198,19 @@ const exhibitions: Exhibition[] = [
     title: "量子班",
     copy: "量子の不思議な性質や量子物理を活用した未来のテクノロジーをお見せします！量子計算・スピン流を題材に展示中です！",
     color: "#c8c8cb",
-    icon: "/expo-assets/quantum.svg",
+    icon: assetPath("/expo-assets/quantum.svg"),
     iconAlt: "量子班",
     detailImages: [
       {
-        src: "/expo-details/quantum/quantum1.webp",
+        src: assetPath("/expo-details/quantum/quantum1.webp"),
         alt: "量子班の展示写真1",
       },
       {
-        src: "/expo-details/quantum/quantum2.webp",
+        src: assetPath("/expo-details/quantum/quantum2.webp"),
         alt: "量子班の展示写真2",
       },
     ],
-    person: "/expo-assets/woman-waving.gif",
+    person: assetPath("/expo-assets/woman-waving.gif"),
     personAlt: "手を振っている女性",
     personOffset: "-45px",
   },
@@ -306,7 +311,7 @@ export default function Home() {
         >
           <div className="relative w-full max-w-[650px]">
             <Image
-              src="/expo-assets/logo-black.svg"
+              src={assetPath("/expo-assets/logo-black.svg")}
               alt=""
               width={650}
               height={650}
@@ -528,7 +533,7 @@ export default function Home() {
         >
           <div className="stamp-prize-wrap">
             <Image
-              src="/stamp-rally/stamp-rally-prize.webp"
+              src={assetPath("/stamp-rally/stamp-rally-prize.webp")}
               alt="スタンプラリーの景品として配布される3Dプリンター製の小物"
               width={4032}
               height={3024}
@@ -576,7 +581,7 @@ export default function Home() {
         >
           <div className="magazine-cover-wrap">
             <Image
-              src="/magazine/magazine-cover.webp"
+              src={assetPath("/magazine/magazine-cover.webp")}
               alt="応用物理の散歩道の表紙"
               width={708}
               height={1000}
@@ -707,7 +712,7 @@ export default function Home() {
           >
             <span className="grid h-6 w-6 place-items-center rounded-[4px] bg-black p-1">
               <Image
-                src="/social-media-logos/logo.svg"
+                src={assetPath("/social-media-logos/logo.svg")}
                 alt=""
                 width={16}
                 height={16}
@@ -723,7 +728,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 hover:opacity-65"
           >
             <Image
-              src="/social-media-logos/Instagram_Glyph_Gradient.svg"
+              src={assetPath("/social-media-logos/Instagram_Glyph_Gradient.svg")}
               alt=""
               width={24}
               height={24}
