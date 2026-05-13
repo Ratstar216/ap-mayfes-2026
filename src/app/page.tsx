@@ -17,7 +17,7 @@ const navItems = [
 
 const electionUrl = "https://visitor.gogatsusai.jp/project/054";
 const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
-const assetBasePath = "/2026";
+const assetBasePath = process.env.NODE_ENV === "production" ? "/2026" : "";
 
 function assetPath(path: string) {
   return `${assetBasePath}${path}`;
