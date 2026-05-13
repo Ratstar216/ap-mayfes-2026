@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Big_Shoulders,
   IBM_Plex_Sans_JP,
@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   title: "工学博覧会 2026",
   description:
     "東京大学五月祭の応用物理展示、工学博覧会 2026 のWebサイトです。",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

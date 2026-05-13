@@ -609,8 +609,8 @@ button {
 
 .related-links-columns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(420px, 1fr));
-  gap: 70px 250px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 70px clamp(48px, 8vw, 120px);
   width: min(900px, 100%);
   margin-right: auto;
   margin-left: auto;
