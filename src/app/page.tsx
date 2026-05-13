@@ -135,8 +135,6 @@ const exhibitions: Exhibition[] = [
   
 ];
 
-const stamps = ["量子", "光", "物性"];
-
 const relatedLinkGroups = [
   {
     title: "【大学・学部・学科】",
@@ -353,19 +351,45 @@ export default function Home() {
 
       <section id="stamp" className="section-container stamp-section">
         <SectionTitle title="Stamp Rally" label="スタンプラリー" />
-        <p className="mx-auto mt-10 max-w-3xl text-center leading-8">
-          3つ以上の班をまわって各班でゲームやクイズにクリアすると、限定特典をプレゼント！
-        </p>
-        <div className="mt-10 flex flex-wrap justify-center gap-6">
-          {stamps.map((stamp) => (
-            <div
-              key={stamp}
-              className="grid h-20 w-20 place-items-center rounded-full border-[3px] border-dashed border-neutral-500 text-sm"
-            >
-              {stamp}
+        <motion.div
+          className="stamp-panel"
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+        >
+          <div className="stamp-prize-wrap">
+            <Image
+              src="/stamp-rally/stamp-rally-prize.webp"
+              alt="スタンプラリーの景品として配布される3Dプリンター製の小物"
+              width={4032}
+              height={3024}
+              className="stamp-prize-image"
+            />
+          </div>
+          <div className="stamp-copy">
+            <p className="stamp-lead">
+              工学部6号館 2階・3階で展示中の複数の企画を巡って、台紙にスタンプを集めよう！
+            </p>
+            <div className="stamp-copy-column">
+              <ul className="stamp-rules">
+                <li>各班の課題クリアごとにスタンプ1つ進呈</li>
+                <li>スタンプ3つで景品1つと交換</li>
+                <li>景品の交換は来場者1名につき1回まで</li>
+              </ul>
             </div>
-          ))}
-        </div>
+            <div className="stamp-copy-column">
+              {/* <div className="stamp-exchange">
+                <p className="stamp-room">景品交換: 工学部6号館 2階 63号講義室 受付</p>
+                <p>3Dプリンターで印刷された限定景品をご用意しています。</p>
+              </div> */}
+              景品交換: 工学部6号館 2階 63号講義室 受付
+              <p className="stamp-note">
+                ※景品の個数には限りがあります。先着順でのお渡しとなります。
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       <section id="magazine" className="section-container stamp-section">

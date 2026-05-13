@@ -280,6 +280,95 @@ button {
   background: rgba(255, 255, 255, 0.4);
 }
 
+.stamp-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-items: start;
+  margin-top: 44px;
+  border: 4px solid #000000;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(77, 196, 255, 0.32), rgba(255, 255, 255, 0.86)),
+    #ffffff;
+  padding: 30px;
+  box-shadow: 14px 14px 0 #000000;
+}
+
+.stamp-prize-wrap {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 640px);
+  overflow: hidden;
+  border: 3px solid #000000;
+  border-radius: 22px;
+  background: #d7f3ff;
+}
+
+.stamp-prize-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.stamp-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  border-radius: 22px;
+  background: rgba(77, 196, 255, 0.26);
+  padding: 34px;
+}
+
+.stamp-copy-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.stamp-lead {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: clamp(1.12rem, 1.55vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.stamp-rules {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 1.25em;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.65;
+}
+
+.stamp-rules li::marker {
+  color: #005aff;
+}
+
+.stamp-exchange {
+  border-left: 6px solid #005aff;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 18px 20px;
+  line-height: 1.65;
+}
+
+.stamp-exchange p {
+  margin: 0;
+}
+
+.stamp-room {
+  font-size: 1.02rem;
+}
+
+.stamp-note {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
 .magazine-panel {
   display: grid;
   grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1fr);
@@ -551,6 +640,11 @@ button {
     white-space: nowrap;
   }
 
+  #stamp .section-title-label {
+    font-size: clamp(2.6rem, 13.4vw, 3.35rem);
+    white-space: nowrap;
+  }
+
   .about-section {
     padding-top: 0px;
     padding-bottom: 40px;
@@ -598,6 +692,34 @@ button {
   .access-box {
     flex-direction: column;
     padding: 28px;
+  }
+
+  .stamp-section {
+    border-radius: 32px;
+  }
+
+  .stamp-panel {
+    gap: 24px;
+    padding: 22px;
+    box-shadow: 8px 8px 0 #000000;
+  }
+
+  .stamp-prize-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .stamp-copy {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 22px;
+  }
+
+  .stamp-rules {
+    gap: 10px;
+  }
+
+  .stamp-exchange {
+    padding: 16px 18px;
   }
 
   .magazine-panel {
