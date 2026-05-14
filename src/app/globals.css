@@ -311,7 +311,109 @@ button {
 }
 
 .expo-detail-carousel {
-  display: none;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 24px;
+}
+
+.expo-detail-photo-frame {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.expo-detail-slide {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  background: #eef4f8;
+}
+
+.expo-detail-image-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.expo-detail-photo {
+  object-fit: contain;
+}
+
+.expo-detail-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.84);
+  color: #ff6d4a;
+  cursor: pointer;
+  font-size: 2.5rem;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.expo-detail-arrow:hover,
+.expo-detail-arrow:focus-visible {
+  transform: translateY(-50%) scale(1.08);
+  background: #ffffff;
+}
+
+.expo-detail-arrow:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 3px;
+}
+
+.expo-detail-arrow-prev {
+  left: 10px;
+}
+
+.expo-detail-arrow-next {
+  right: 10px;
+}
+
+.expo-detail-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.expo-detail-dot {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+
+.expo-detail-dot:hover,
+.expo-detail-dot:focus-visible,
+.expo-detail-dot.is-active {
+  background: #4dc4ff;
+  transform: scale(1.35);
+}
+
+.expo-detail-dot:focus-visible {
+  outline: 2px solid #000000;
+  outline-offset: 3px;
 }
 
 .person-gif {
@@ -706,114 +808,6 @@ button {
 .related-link-group-nowrap a {
   display: inline-block;
   white-space: nowrap;
-}
-
-@media (min-width: 769px) {
-  .expo-detail-carousel {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 24px;
-  }
-
-  .expo-detail-photo-frame {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .expo-detail-slide {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    border: 2px solid rgba(0, 0, 0, 0.12);
-    border-radius: 14px;
-    background: #eef4f8;
-  }
-
-  .expo-detail-image-layer {
-    position: absolute;
-    inset: 0;
-  }
-
-  .expo-detail-photo {
-    object-fit: contain;
-  }
-
-  .expo-detail-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 2;
-    display: grid;
-    width: 38px;
-    height: 38px;
-    place-items: center;
-    transform: translateY(-50%);
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.84);
-    color: #ff6d4a;
-    cursor: pointer;
-    font-size: 2.5rem;
-    line-height: 1;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
-    transition:
-      transform 0.18s ease,
-      background 0.18s ease;
-  }
-
-  .expo-detail-arrow:hover,
-  .expo-detail-arrow:focus-visible {
-    transform: translateY(-50%) scale(1.08);
-    background: #ffffff;
-  }
-
-  .expo-detail-arrow:focus-visible {
-    outline: 3px solid #000000;
-    outline-offset: 3px;
-  }
-
-  .expo-detail-arrow-prev {
-    left: 10px;
-  }
-
-  .expo-detail-arrow-next {
-    right: 10px;
-  }
-
-  .expo-detail-dots {
-    display: flex;
-    justify-content: center;
-    gap: 9px;
-    margin-top: 12px;
-  }
-
-  .expo-detail-dot {
-    width: 9px;
-    height: 9px;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    padding: 0;
-    transition:
-      transform 0.18s ease,
-      background 0.18s ease;
-  }
-
-  .expo-detail-dot:hover,
-  .expo-detail-dot:focus-visible,
-  .expo-detail-dot.is-active {
-    background: #4dc4ff;
-    transform: scale(1.35);
-  }
-
-  .expo-detail-dot:focus-visible {
-    outline: 2px solid #000000;
-    outline-offset: 3px;
-  }
 }
 
 @keyframes floating {
