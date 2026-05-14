@@ -243,13 +243,16 @@ const relatedLinkGroups = [
   //   ],
   // },
   {
-    title: "【ご協力者様（敬称略・五十音順）】",
+    title: "【ご協力者様（敬称略・順不同）】",
+    noWrapLinks: true,
     links: [
-      { label: "東京大学工学部(仮)", href: "https://www.t.u-tokyo.ac.jp/" },
-      // { label: "東京大学物理工学科", href: "https://www.ap.t.u-tokyo.ac.jp/" },
-      // { label: "東京大学計数工学科", href: "https://www.keisu.t.u-tokyo.ac.jp/" },
-      // { label: "東京大学数理情報工学", href: "https://www.mis.t.u-tokyo.ac.jp/" },
-      // { label: "東京大学システム情報工学", href: "https://www.sis.t.u-tokyo.ac.jp/" },
+      { label: "齊藤研究室（工学系研究科物理工学専攻）", href: "https://saitoh.t.u-tokyo.ac.jp" },
+      { label: "中村研究室（工学系研究科物理工学専攻）", href: "https://www.qipe.t.u-tokyo.ac.jp" },
+      { label: "理化学研究所", href: "https://rqc.riken.jp" },
+      { label: "山本研究室（工学系研究科附属量子相エレクトロニクス研究センター）", href: "https://www.qpec.t.u-tokyo.ac.jp/yamamoto_lab/" },
+      { label: "島﨑研究室（物性研究所）", href: "https://shimazaki.issp.u-tokyo.ac.jp" },
+      { label: "中村・高瀬研究室（情報理工学系研究科システム情報学専攻）", href: "https://hal.ipc.i.u-tokyo.ac.jp/ja/" },
+      { label: "奈良・宮廻研究室（情報理工学系研究科システム情報学専攻）", href: "https://www.inv.ipc.i.u-tokyo.ac.jp" },
     ]
   }
 ];
@@ -686,7 +689,12 @@ export default function Home() {
         <SectionTitle title="Links" label="関連リンク" />
         <div className="related-links-columns">
           {relatedLinkGroups.map((group) => (
-            <section key={group.title} className="related-link-group">
+            <section
+              key={group.title}
+              className={`related-link-group ${
+                group.noWrapLinks ? "related-link-group-nowrap" : ""
+              }`}
+            >
               <h3>{group.title}</h3>
               <ul>
                 {group.links.map((link) => (

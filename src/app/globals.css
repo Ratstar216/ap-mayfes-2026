@@ -646,6 +646,16 @@ button {
   color: #000000;
 }
 
+.related-link-group-nowrap {
+  grid-column: 1 / -1;
+  overflow-x: auto;
+}
+
+.related-link-group-nowrap a {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 @media (min-width: 769px) {
   .expo-detail-carousel {
     display: block;
@@ -923,6 +933,14 @@ button {
 
   .related-link-group a {
     font-size: 1.1rem;
+  }
+
+  .related-link-group-nowrap {
+    overflow-x: visible;
+  }
+
+  .related-link-group-nowrap a {
+    white-space: normal;
   }
 
   .election-section {
