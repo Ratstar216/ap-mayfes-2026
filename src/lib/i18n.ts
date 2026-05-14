@@ -9,7 +9,7 @@ export function isLocale(value: string): value is Locale {
 export const defaultLocale: Locale = "ja";
 
 export const electionUrl = "https://visitor.gogatsusai.jp/project/054";
-export const electionUrlEn = "https://visitor.gogatsusai.jp/en/project/054"
+export const electionUrlEn = "https://visitor.gogatsusai.jp/en/project/054";
 export const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
 
 const dictionaries = {

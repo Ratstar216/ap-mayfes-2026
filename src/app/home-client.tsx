@@ -7,6 +7,7 @@ import { useState } from "react";
 import {
   defaultLocale,
   electionUrl,
+  electionUrlEn,
   getDictionary,
   type Locale,
   magazineUrl,
@@ -161,6 +162,7 @@ const exhibitionAssets: Exhibition[] = [
 
 export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
   const t = getDictionary(locale);
+  const electionHref = locale === "en" ? electionUrlEn : electionUrl;
   const alternatePath = `${assetBasePath}/${t.alternateLocale}`;
   const [activePanel, setActivePanel] = useState<string | null>(null);
   const [activeDetailImage, setActiveDetailImage] = useState<Record<string, number>>({});
@@ -546,7 +548,7 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
               <p className="mt-5 max-w-2xl leading-8">{t.election.copy}</p>
             </div>
             <a
-              href={electionUrl}
+              href={electionHref}
               target="_blank"
               rel="noreferrer"
               className="election-button"
