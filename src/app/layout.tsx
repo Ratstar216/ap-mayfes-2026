@@ -4,6 +4,7 @@ import {
   IBM_Plex_Sans_JP,
   Zen_Maru_Gothic,
 } from "next/font/google";
+import { getDictionary } from "@/lib/i18n";
 import "./globals.css";
 
 const ibmPlexSansJp = IBM_Plex_Sans_JP({
@@ -28,63 +29,47 @@ const zenMaruGothic = Zen_Maru_Gothic({
   display: "swap",
 });
 
+const t = getDictionary("ja");
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://ap-mayfest.com"),
   title: {
-    default: "工学博覧会 2026 | 東京大学五月祭 応用物理系学科展示",
-    template: "%s | 工学博覧会 2026",
+    default: t.metadata.title,
+    template: `%s | ${t.siteName}`,
   },
-  description:
-    "工学博覧会 2026 は、東京大学五月祭で物理工学科・計数工学科の学生が主催する展示です。ボードゲーム、セキュリティ、暗号、量子、光、物性、制御、確率統計、金融工学などを学べます。",
-  applicationName: "工学博覧会 2026",
-  authors: [{ name: "工学博覧会 2026" }],
-  creator: "工学博覧会 2026",
-  publisher: "工学博覧会 2026",
+  description: t.metadata.description,
+  applicationName: t.siteName,
+  authors: [{ name: t.siteName }],
+  creator: t.siteName,
+  publisher: t.siteName,
   alternates: {
     canonical: "/2026/",
+    languages: {
+      ja: "/2026/ja/",
+      en: "/2026/en/",
+    },
   },
-  keywords: [
-    "工学博覧会",
-    "工学博覧会 2026",
-    "東京大学",
-    "五月祭",
-    "応用物理",
-    "物理工学科",
-    "計数工学科",
-    "東京大学工学部",
-    "本郷キャンパス",
-    "量子",
-    "光",
-    "制御工学",
-    "確率統計",
-    "暗号",
-    "金融工学",
-    "ボードゲーム",
-    "物性",
-    "セキュリティ",
-  ],
+  keywords: [...t.metadata.keywords],
   openGraph: {
     type: "website",
     locale: "ja_JP",
     url: "/2026/",
-    siteName: "工学博覧会 2026",
-    title: "工学博覧会 2026 | 東京大学五月祭 応用物理系学科展示",
-    description:
-      "工学博覧会 2026 は、東京大学五月祭で物理工学科・計数工学科の学生が主催する展示です。ボードゲーム、セキュリティ、暗号、量子、光、物性、制御、確率統計、金融工学などを学べます。",
+    siteName: t.siteName,
+    title: t.metadata.title,
+    description: t.metadata.description,
     images: [
       {
         url: "/2026/expo-assets/logo-black.svg",
         width: 650,
         height: 650,
-        alt: "工学博覧会 2026",
+        alt: t.siteName,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "工学博覧会 2026 | 東京大学五月祭 応用物理系学科展示",
-    description:
-      "東京大学五月祭で物理工学科・計数工学科の学生が主催する展示です。",
+    title: t.metadata.title,
+    description: t.metadata.twitterDescription,
     images: ["/2026/expo-assets/logo-black.svg"],
   },
 };

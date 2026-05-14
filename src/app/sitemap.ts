@@ -5,12 +5,12 @@ const siteUrl = "https://ap-mayfest.com";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${siteUrl}/2026/`,
-      lastModified: new Date("2026-05-14"),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-  ];
+  const lastModified = new Date("2026-05-14");
+
+  return ["", "ja/", "en/"].map((path) => ({
+    url: `${siteUrl}/2026/${path}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: path === "" ? 1 : 0.9,
+  }));
 }
