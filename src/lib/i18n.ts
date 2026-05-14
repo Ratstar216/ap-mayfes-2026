@@ -138,9 +138,17 @@ const dictionaries = {
       {
         id: "quantum",
         title: "量子班",
-        copy: "量子の不思議な性質や量子物理を活用した未来のテクノロジーをお見せします！量子計算・スピン流を題材に展示中です！",
+        copy:
+          "量子班では、目に見えない小さな小さな世界の不思議な物理を体感できる展示をご用意しています！量子から芽生えた未来のテクノロジーを体験しましょう！\n[展示一覧]\n・未来の発電！スピンゼーベック効果を体験しよう\n・量子コンピューターの心臓を見てみよう！\n・量子ゼノン効果「観測すると状態が止まる！」\n・「もつれ」ってなんだろう\n・量子への招待　シュテルンゲルラッハの実験を疑似体験しよう",
         iconAlt: "量子班",
-        detailAlts: ["量子班の展示写真1", "量子班の展示写真2"],
+        detailAlts: [
+          "量子班の展示写真1",
+          "量子班の展示写真2",
+          "量子班の展示写真3",
+          "量子班の展示写真4",
+          "量子班の展示写真5",
+          "量子班の展示写真6",
+        ],
         personAlt: "手を振っている女性",
       },
     ],
@@ -357,9 +365,17 @@ const dictionaries = {
       {
         id: "quantum",
         title: "Quantum Team",
-        copy: "Explore strange quantum properties and future technologies built on quantum physics, including quantum computing and spin currents.",
+        copy:
+          "The Quantum Team has prepared exhibits where you can experience the strange physics of the tiny, invisible world. Come explore future technologies that have grown out of quantum science!\n[Exhibit List]\n- Experience the spin Seebeck effect: future power generation\n- Take a look at the heart of a quantum computer\n- Quantum Zeno effect: observing a state can freeze it\n- What is entanglement?\n- Invitation to quantum physics: try a simulated Stern-Gerlach experiment",
         iconAlt: "Quantum Team",
-        detailAlts: ["Quantum team exhibit photo 1", "Quantum team exhibit photo 2"],
+        detailAlts: [
+          "Quantum team exhibit photo 1",
+          "Quantum team exhibit photo 2",
+          "Quantum team exhibit photo 3",
+          "Quantum team exhibit photo 4",
+          "Quantum team exhibit photo 5",
+          "Quantum team exhibit photo 6",
+        ],
         personAlt: "Woman waving",
       },
     ],

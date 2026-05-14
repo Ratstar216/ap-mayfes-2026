@@ -19,6 +19,30 @@ function assetPath(path: string) {
   return `${assetBasePath}${path}`;
 }
 
+function DetailCopy({ copy }: { copy: string }) {
+  const listMarkers = ["\n[展示一覧]", "\n[Exhibit List]"];
+  const listStart = listMarkers
+    .map((marker) => copy.indexOf(marker))
+    .filter((index) => index !== -1)
+    .sort((a, b) => a - b)[0];
+
+  if (listStart === undefined) {
+    return <p className="mt-4 whitespace-pre-line font-detail leading-8">{copy}</p>;
+  }
+
+  const intro = copy.slice(0, listStart);
+  const list = copy.slice(listStart + 1);
+
+  return (
+    <p className="mt-4 font-detail leading-8">
+      <span>{intro}</span>
+      <span className="mt-3 block whitespace-pre-line text-[0.92rem] leading-7">
+        {list}
+      </span>
+    </p>
+  );
+}
+
 type Exhibition = {
   id: string;
   side: "left" | "right";
@@ -149,10 +173,22 @@ const exhibitionAssets: Exhibition[] = [
     icon: assetPath("/expo-assets/quantum.svg"),
     detailImages: [
       {
-        src: assetPath("/expo-details/quantum/quantum1.webp"),
+        src: assetPath("/expo-details/quantum/quantum_web_1.webp"),
       },
       {
-        src: assetPath("/expo-details/quantum/quantum2.webp"),
+        src: assetPath("/expo-details/quantum/quantum_web_2.webp"),
+      },
+      {
+        src: assetPath("/expo-details/quantum/quantum_web_3.webp"),
+      },
+      {
+        src: assetPath("/expo-details/quantum/quantum_web_4.webp"),
+      },
+      {
+        src: assetPath("/expo-details/quantum/quantum_web_5.webp"),
+      },
+      {
+        src: assetPath("/expo-details/quantum/quantum_web_6.webp"),
       },
     ],
     person: assetPath("/expo-assets/woman-waving.gif"),
@@ -351,7 +387,7 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
                 transition={{ duration: 0.2 }}
               >
                 <h3 className="font-detail text-2xl font-bold">{item.title}</h3>
-                <p className="mt-4 font-detail leading-8">{item.copy}</p>
+                <DetailCopy copy={item.copy} />
                 {activePanel === item.id && activeDetail && (
                   <div
                     className="expo-detail-carousel"
