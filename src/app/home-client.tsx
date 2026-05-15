@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ExternalLink, Gift, MapPin } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   defaultLocale,
   electionUrl,
@@ -17,6 +17,18 @@ const assetBasePath = process.env.NODE_ENV === "production" ? "/2026" : "";
 
 function assetPath(path: string) {
   return `${assetBasePath}${path}`;
+}
+
+function detailPanelId(id: string) {
+  return `${id}-panel`;
+}
+
+function getHashId() {
+  try {
+    return decodeURIComponent(window.location.hash.slice(1));
+  } catch {
+    return window.location.hash.slice(1);
+  }
 }
 
 function DetailCopy({ copy }: { copy: string }) {
@@ -196,6 +208,8 @@ const exhibitionAssets: Exhibition[] = [
   },
 ];
 
+const exhibitionIds = exhibitionAssets.map((asset) => asset.id);
+
 export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
   const t = getDictionary(locale);
   const electionHref = locale === "en" ? electionUrlEn : electionUrl;
@@ -203,8 +217,52 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
   const [activePanel, setActivePanel] = useState<string | null>(null);
   const [activeDetailImage, setActiveDetailImage] = useState<Record<string, number>>({});
 
+  useEffect(() => {
+    function applyHash() {
+      const hashId = getHashId();
+      const panelId = exhibitionIds.find((id) => hashId === detailPanelId(id));
+
+      if (!panelId) {
+        setActivePanel(null);
+        return;
+      }
+
+      setActivePanel(panelId);
+      window.requestAnimationFrame(() => {
+        document.getElementById(detailPanelId(panelId))?.scrollIntoView({
+          block: "center",
+        });
+      });
+    }
+
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+
+    return () => {
+      window.removeEventListener("hashchange", applyHash);
+    };
+  }, []);
+
   function togglePanel(id: string) {
-    setActivePanel((current) => (current === id ? null : id));
+    if (activePanel === id) {
+      closePanel(id);
+      return;
+    }
+
+    setActivePanel(id);
+    window.location.hash = detailPanelId(id);
+  }
+
+  function closePanel(id?: string) {
+    setActivePanel(null);
+
+    if (id && getHashId() === detailPanelId(id)) {
+      window.history.replaceState(
+        null,
+        "",
+        `${window.location.pathname}${window.location.search}`,
+      );
+    }
   }
 
   function selectDetailImage(id: string, imageIndex: number) {
@@ -351,7 +409,7 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
                 //style={{ zIndex: 30, position: 'relative' }} 
                 style={{ zIndex: 30 }}
                 aria-expanded={activePanel === item.id}
-                aria-controls={`${item.id}-panel`}
+                aria-controls={detailPanelId(item.id)}
               >
                 <span className="tap-hint">{t.ui.tap}</span>
                 <span
@@ -367,12 +425,12 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
               {activePanel === item.id && (
                 <div
                   className="fixed inset-0 z-10"
-                  onClick={() => setActivePanel(null)}
+                  onClick={() => closePanel(item.id)}
                 />
               )}
 
               <motion.div
-                id={`${item.id}-panel`}
+                id={detailPanelId(item.id)}
                 className="details-panel"
                 onClick={(e) => e.stopPropagation()} 
                 style={{ 
