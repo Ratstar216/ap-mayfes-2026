@@ -13,6 +13,8 @@ export const electionUrlEn = "https://visitor.gogatsusai.jp/en/project/054";
 export const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
 export const quoridorUrl =
   "https://app-mf2026quoridor.happyrock-55b718f1.japaneast.azurecontainerapps.io/";
+export const martingaleGameUrl =
+  "https://ap-mayfest.com/2026/martingale-game/?v=mayfest";
 
 const dictionaries = {
   ja: {
@@ -104,6 +106,7 @@ const dictionaries = {
         id: "finance",
         title: "金融班",
         copy: "一見縁遠い金融と数学ですが、実は金融は高度な数学の応用分野なんです。この展示では不確実性の裏に潜む数理をお見せします。",
+        links: [{ label: "ギャンブル体験ゲーム", href: martingaleGameUrl }],
         iconAlt: "金融班",
         detailAlts: ["金融班の展示写真"],
         personAlt: "座っている女性",
@@ -333,6 +336,7 @@ const dictionaries = {
         id: "finance",
         title: "Finance Team",
         copy: "Finance may feel distant from mathematics, but it is one of mathematics' most advanced applications. This exhibit reveals the mathematical structure hidden behind uncertainty.",
+        links: [{ label: "Gambling Experience Game", href: martingaleGameUrl }],
         iconAlt: "Finance Team",
         detailAlts: ["Finance team exhibit photo"],
         personAlt: "Woman sitting",
