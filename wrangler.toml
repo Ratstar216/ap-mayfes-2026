@@ -2,6 +2,7 @@
 
 name = "ap-mayfes-2026"
 compatibility_date = "2026-05-12"
+route = "ap-mayfest.com/2026/*"
 
 [assets]
 directory = "./out"
