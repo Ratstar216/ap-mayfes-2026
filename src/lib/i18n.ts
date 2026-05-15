@@ -11,6 +11,8 @@ export const defaultLocale: Locale = "ja";
 export const electionUrl = "https://visitor.gogatsusai.jp/project/054";
 export const electionUrlEn = "https://visitor.gogatsusai.jp/en/project/054";
 export const magazineUrl = "https://apmayfes.booth.pm/items/8340650";
+export const quoridorUrl =
+  "https://app-mf2026quoridor.happyrock-55b718f1.japaneast.azurecontainerapps.io/";
 
 const dictionaries = {
   ja: {
@@ -77,6 +79,7 @@ const dictionaries = {
         id: "board-game",
         title: "ボードゲーム班",
         copy: "AIとあなた、どっちが上？深い洞察が試されるコリドールでAIに挑戦！実機でもスマホでも楽しめる対戦体験です！",
+        links: [{ label: "コリドールを遊ぶ", href: quoridorUrl }],
         iconAlt: "ボードゲーム班",
         detailAlts: ["コリドール対戦展示の様子"],
         personAlt: "本を読んでいる男性",
@@ -305,6 +308,7 @@ const dictionaries = {
         id: "board-game",
         title: "Board Game Team",
         copy: "Who has the sharper strategy: you or AI? Challenge an AI opponent in Quoridor, a board game that rewards deep insight. Play on the physical setup or on your phone.",
+        links: [{ label: "Play Quoridor", href: quoridorUrl }],
         iconAlt: "Board Game Team",
         detailAlts: ["Quoridor match exhibit"],
         personAlt: "Man reading a book",

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Gift, MapPin } from "lucide-react";
+import { ExternalLink, Gift, MapPin } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import {
@@ -388,6 +388,22 @@ export default function Home({ locale = defaultLocale }: { locale?: Locale }) {
               >
                 <h3 className="font-detail text-2xl font-bold">{item.title}</h3>
                 <DetailCopy copy={item.copy} />
+                {"links" in item && item.links.length > 0 && (
+                  <div className="exhibition-detail-links">
+                    {item.links.map((link) => (
+                      <a
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="exhibition-detail-link"
+                      >
+                        <ExternalLink aria-hidden="true" size={18} strokeWidth={2.4} />
+                        <span>{link.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
                 {activePanel === item.id && activeDetail && (
                   <div
                     className="expo-detail-carousel"

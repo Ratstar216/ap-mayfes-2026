@@ -310,6 +310,47 @@ button {
   right: 35%;
 }
 
+.exhibition-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.exhibition-detail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 100%;
+  border: 2px solid #111111;
+  border-radius: 999px;
+  background: #ffffff;
+  padding: 9px 14px;
+  color: #111111;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 #111111;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.exhibition-detail-link:hover,
+.exhibition-detail-link:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #111111;
+}
+
+.exhibition-detail-link:focus-visible {
+  outline: 3px solid #111111;
+  outline-offset: 4px;
+}
+
+.exhibition-detail-link span {
+  overflow-wrap: anywhere;
+}
+
 .expo-detail-carousel {
   display: block;
   width: 100%;
