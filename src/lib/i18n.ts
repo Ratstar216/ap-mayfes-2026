@@ -220,6 +220,7 @@ const dictionaries = {
         links: [
           { label: "五月祭公式HP", href: "https://gogatsusai.jp/" },
           { label: "工学博覧会 投票ページ", href: electionUrl },
+          { label: "Daily Lazer Puzzle", href: "https://ap-mayfest.com/2026/laser-puzzle/daily.html"}
         ],
       },
       {
@@ -447,6 +448,7 @@ const dictionaries = {
         links: [
           { label: "May Festival official website", href: "https://visitor.gogatsusai.jp/en" },
           { label: "Tech Expo voting page", href: electionUrlEn },
+          { label: "Daily Lazer Puzzle", href: "https://ap-mayfest.com/2026/laser-puzzle/daily.html"},
         ],
       },
       {
