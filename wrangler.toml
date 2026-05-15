@@ -1,6 +1,6 @@
 "$schema" = "./node_modules/wrangler/config-schema.json"
 
-name = "ap-mayfes-2026"
+name = "2026-mayfest"
 compatibility_date = "2026-05-12"
 route = "ap-mayfest.com/2026/*"
 
